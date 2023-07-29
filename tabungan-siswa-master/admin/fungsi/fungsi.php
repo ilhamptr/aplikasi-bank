@@ -191,8 +191,11 @@ function edit_siswa(){
 	$kelas = $_POST['kelas'];
 	$alamat = $_POST['alamat'];
 	$notlp = $_POST['notlp'];
+	$nisn = $_POST['nisn'];
+	$rekening = $_POST['rekening'];
 
-	return mysqli_query($koneksi, "UPDATE tb_siswa SET nama='$nama', kelas='$kelas', alamat='$alamat', notlp='$notlp' WHERE id='$id'");
+
+	return mysqli_query($koneksi, "UPDATE tb_siswa SET nama='$nama', kelas='$kelas', alamat='$alamat', notlp='$notlp', nisn='$nisn', no_rekening='$rekening' WHERE id='$id'");
 }
 //JUMLAH SISWA
 function jumlah_siswa()

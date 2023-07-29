@@ -39,6 +39,8 @@ foreach ($data_siswa as $key):
                               <td><?=  $key['kelas'];?></td>
                               <td><?=  $key['alamat'];?></td>
                               <td><?= $key['notlp'];?></td>
+                              <td><?= $key['nisn'];?></td>
+                              <td><?= $key['no_rekening'];?></td>
 
                               
                               <td>
@@ -143,6 +145,16 @@ foreach ($data_siswa as $key):
     <label>Nomor telepon</label>
   <input type="text" class="form-control" id="exampleInputEmail1" name="notlp" value="<?= $key['notlp'];?>" aria-describedby="emailHelp" placeholder="Masukkan Nomor Telepon">
     <small id="emailHelp" class="form-text text-muted">Masukkan nomor telepon</small>
+  </div>
+ <div class="form-group">
+    <label>NISN</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" name="nisn" value="<?= $key['nisn'];?>" aria-describedby="emailHelp" placeholder="Masukkan NISN">
+    <small id="emailHelp" class="form-text text-muted">Masukkan NISN</small>
+  </div>
+ <div class="form-group">
+    <label>No rekening</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" name="rekening" value="<?= $key['no_rekening'];?>" aria-describedby="emailHelp" placeholder="Masukkan Nomor rekening">
+    <small id="emailHelp" class="form-text text-muted">Masukkan Nomor rekening</small>
   </div>
 
       </div>

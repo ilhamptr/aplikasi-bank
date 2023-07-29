@@ -224,6 +224,8 @@ Tabungan</a></li>
                         <th>Kelas</th>
                         <th>Alamat</th>
                         <th>Nomor Telepon</th>
+                        <th>NISN</th>
+                        <th>Nomor rekening</th>
                         <th>Aksi</th>
                            
                                                 
