@@ -12,6 +12,14 @@ require 'fungsi/fungsi.php';
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="<?= url() ?>vendors/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="<?= url() ?>vendors/css/bootstrap.min.css">
+<link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
+<style>
+	body{
+		@import url('https://fonts.cdnfonts.com/css/arial');
+
+		font-family: 'Arial', sans-serif;
+	}
+</style>
 	<title>Print</title>
 </head>
 <body>

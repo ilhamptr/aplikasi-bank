@@ -8,8 +8,15 @@ foreach (summon_admin() as $adm):
   if (isset($_POST['simpan'])) {
     penarikan_saldo();
   }
-
+  
+  
  ?>
+
+<?php 
+if (isset($_POST['buttoncari'])) {
+  $datacari = $_POST['datacari'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +43,15 @@ foreach (summon_admin() as $adm):
     @media screen and (max-width: 767px) {
       .row.content {height: auto;} 
     }
+    td{
+      cursor: pointer;
+    }
   </style>
 </head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
 <body>
 
 <nav class="navbar navbar-inverse visible-xs">
@@ -66,8 +80,7 @@ foreach (summon_admin() as $adm):
 </nav>
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-          <div class="navbar-header">
-
+        <div class="navbar-header">
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li class="dropdown">
@@ -181,8 +194,8 @@ Tabungan</a></li>
                       }
                     })
 
-
                   </script>
+                  
                           </form>           
                         </div>
                        
@@ -202,18 +215,14 @@ Tabungan</a></li>
   <div id="modal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <form role="form" id="form-tambah" method="post" action="input.php">
+        <!-- <form role="form" id="form-tambah" method="post" action="input.php"> -->
         <div class="modal-header">
           <center>
           <h3 class="modal-title">Pilih Siswa</h3>
           </center>
         </div>
-          <div class="modal-body">
-            
-            
-            
-            
-              <table width="100%" class="table table-hover"  id="example">
+          <div class="modal-body">     
+              <table width="100%" class="table table-striped table-bordered"  id="example">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -233,8 +242,7 @@ Tabungan</a></li>
                       $no = 1;
                       $data = mysqli_query ($koneksi, " SELECT  *
                                             from 
-                                            tb_tabungan
-                                            order by id_tabungan ASC");
+                                            tb_tabungan order by id_tabungan ASC");
                       foreach ($data as $sa):
                         
                       
@@ -382,6 +390,9 @@ Tabungan</a></li>
   </div>
 </div>
 </div>
+  <!--untuk datatable -->
+  
+  <!--akhir  -->
   <script src="<?= url() ?>vendors/jquery/jquery.min.js"></script>
   <script src="<?= url() ?>vendors/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -399,6 +410,23 @@ Tabungan</a></li>
       
     });
     </script>
+
+    <!-- untuk datatable -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var table = $('#example').DataTable( {
+            responsive: true
+        } );
+     
+        new $.fn.dataTable.FixedHeader( table );
+    });
+</script>
    </body>
 </html>
 <?php endforeach; ?>

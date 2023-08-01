@@ -328,11 +328,6 @@ function tambah_setoran(){
 
 
 
-	
-
-	
-
-	
 
 	if ($query) {
 		
@@ -365,6 +360,9 @@ function penarikan_saldo(){
 		echo "gagal";
 	}
 }
+
+
+
 
 // jumlah uang beranda
 function jumlah_tabungan(){
